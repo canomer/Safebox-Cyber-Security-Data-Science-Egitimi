@@ -1,0 +1,39 @@
+2023/05/20 ÖDEV // Deadline 26 Mayıs 2023, 23.00
+###############################################################################################################################################################################################################################
+1 // Analitik sql nedir, nerelerde kullanılır, sorgu örnekleri
+START 1//######################################################################################################################################################################################################################
+
+Analitik SQL, Genellikle büyük veri kümeleri üzerinde karmaşık analiz ve hesaplamalar yapmak için kullanılan fonksiyon setidir. Analitik SQL, büyük miktarda verinin analiz edilmesini ve özetlenmesini hızlandırmaya yardımcı 
+olur ve genellikle iş zekası, veri analizi ve raporlama gibi alanlarda kullanılır.
+
+Büyük veri kümelerinin üzerinde yapılan karmaşık hesaplamaları yapmak için kullanılan ve analiz edilmesini hızlandırmaya yardımcı olan fonksiyon setini oluştur. Genellikle veri analizi ve raporlama alanlarında kullanılır.
+
+Analitik SQL, veri analizinin her aşamasında kullanılabilir: verilerin hazırlanması, model oluşturma, tahminler yapma ve sonuçların analizi amacıyla kullanılabilir. Analitik fonksiyonlar, bir veri kümesinde bir dizi satıra 
+uygulanabilir ve her satır için sonuç döndürürebilir. Bu sonuçlar, bir satırın belirli bir veri grubunun veya kategorinin altında nasıl sıralandığını veya dağıldığını gösterir.
+
+Örnek olarak, aşağıdaki SQL sorgusunda "RANK" fonksiyonu kullanılmıştır, bir çalışanın maaşının aynı departmanda çalışan diğer çalışanların maaşına göre nasıl sıralandığını gösterir :
+
+// Örnek 1 Start --------------------------------------------------------------------------------------
+SELECT department_id, first_name, salary,
+RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) salary_rank
+FROM employees;
+// Örnek 1 End ----------------------------------------------------------------------------------------
+
+Bu sorgu, her departmanda (PARTITION BY department_id) maaşları en yüksekten en düşüğe doğru sıralar (ORDER BY salary DESC) ve her bir çalışanın maaş sıralamasını verir (RANK() OVER). Başka bir örnek olarak "LAG" fonksiyonu
+verilebilir. Bu fonksiyon, her bir satır için bir önceki satırın değerini döndürür (her bir ay için satışları ve bir önceki ayın satışlarını verir.) :
+
+// Örnek 2 Start --------------------------------------------------------------------------------------
+SELECT month, sales, LAG(sales) OVER (ORDER BY month) as previous_month_sales
+FROM sales_table;
+// Örnek 2 End ----------------------------------------------------------------------------------------
+
+END 1//########################################################################################################################################################################################################################
+2 // Dahil olduğumuz grup ismindeki virüsün araştırılması : Creeper Virüsü
+START 2//######################################################################################################################################################################################################################
+"Creeper" virüsü, 1971 yılında Bob Thomas tarafından yaratılılmış olup dünyanın ilk bilgisayar "virüsü" olarak kabul edilir. Amerikan Savunma Bakanlığı'nın ARPANET ağındaki bilgisayarları hedef alıyordu. Creeper bir "worm"
+virüsüdür çünkü bulunduğu ağdaki bilgisayarlara bağımsız olarak bulaşma kabiliyetine sahiptir. Virüsün amacı bir sistemden diğerine yayılmak ve kendi kopyalarını oluşturmaktı. Bir bilgisayara ulaştığında, ekranda "I'm the 
+creeper, catch me if you can!" mesajını görüntülüyordu, aslında zararlı bir amaç için oluşturulmamıştı. Oluşturulmasındaki amaç, yazılımların bir ağ boyunca nasıl hareket edebileceğini görebilmekti. 
+
+Creeper'a yanıt olarak, Ray Tomlinson (e-postanın yaratıcısı olarak kabul edilir) "Reaper" isimli programı oluşturdu ve Creeper'ı bulmak ve silmek için ARPANET'e gönderildi. Bu da bilgisayar tarihindeki ilk antivirüs 
+yazılımı olarak kabul edilir.
+END 2//########################################################################################################################################################################################################################
