@@ -1,0 +1,33 @@
+Stored Procedure ve Trigger, veritabanı sistemlerinde kullanılan önemli bileşenlerdir.
+
+Stored Procedure, veritabanında tanımlanan ve birden fazla SQL ifadesi içeren işlemlerdir. Bu işlemler, belirli bir mantığı uygulamak amacıyla kullanılır ve genellikle veritabanında tekrar tekrar kullanılabililir. 
+
+Stored Procedure Avantajları:
+
+* Performans İyileştirmesi: Stored Procedure, veritabanı sunucusunda işlenir ve önceden derlenir. Bu, tekrar tekrar yürütülmeleri durumunda daha hızlı çalışmalarını sağlar. Ayrıca, ağ trafiğini azaltarak veritabanı sunucu ve istemci arasındaki veri alışverişini minimize eder.
+* Güvenlik: Stored Procedure, veritabanı erişimini kontrol etmek amacıyla kullanılabilir. Kullanıcıların doğrudan tablolara veya nesnelere erişimini sınırlandırır.
+* Veri Bütünlüğü: Veri bütünlüğünü sağlamak için kullanılabilir. Birden fazla tabloyu veya nesneyi etkileyen işlemleri gerçekleştirmek için kullanılabilirler.
+
+Stored Procedure Dezavantajları:
+
+* Karmaşıklık: Kompleks yapılar kurmak karmaşıklığa sebep olabilir. Bu nedenle, geliştirme ve bakım süreçleri daha zor hale gelebilir.
+* Taşınabilirlik: Stored Procedure yapıları genellikle belirli bir veritabanı yönetim sistemine özgüdür. Farklı veritabanı yönetim sistemleri arasında uyumluluk sorunları ortaya çıkabilir. Yapının yeniden oluşturulmasını gerektirebilir.
+* Bakım zorlukları: Söz konusu yapılar veritabanı tarafında çalıştıkları için, değişiklik yapmak veya hataları düzeltmek daha karmaşık olabilir. Bu durumda, güncellemeler veya düzeltmeler veritabanının gerikalanını da etkileyebilir.
+
+
+
+Trigger, veritabanında belirli bir olay gerçekleştiğinde otomatik olarak çalışan işlevlerdir. Olaylar, tablo üzerinde yapılan ekleme, silme gibi değişiklikler olabilir. 
+
+Trigger Avantajları:
+
+* Veri Bütünlüğü: Veri bütünlüğünü sağlamak için kullanılır. Örneğin, bir tabloya ekleme yapılırken, trigger otomatik olarak bazı kontroller yapabilir ve uygun değerlerin girilip girilmediğini kontrol eder.
+* Log Tutma: Veritabanındaki değişiklikleri izlemek ve kaydetmek için kullanılabilir. Örneğin, bir tablo üzerinde yapılan ekleme, silme işlemlerini takip etmek ve bu değişiklikleri kaydetmek için kullanılabilir.
+* Uyarılar ve Otomatik İşlemler: Belirli bir olay gerçekleştiğinde otomatik olarak belirli işlemleri gerçekleştirmek için kullanılabilir. Örneğin, bir tabloya yeni bir kayıt eklendiğinde, kayıt otomatik olarak başka bir tablo ile ilişkilendirilebilir.
+
+Trigger Dezavantajları:
+
+* Karmaşıklık: Trigger yapıları genellikle belirli bir veritabanı yönetim sistemine özgüdür. Farklı veritabanı yönetim sistemleri arasında uyumluluk sorunları ortaya çıkabilir. Yapının yeniden oluşturulmasını gerektirebilir.
+* Performans sorunları: Trigger, veritabanında herhangi bir değişiklik olduğunda tetiklendiği için, veritabanı işlemlerini yavaşlatabilir.
+* Güncelleme zorlukları: Trigger, veritabanı üzerinde gerçekleşen olaylara tepki verir ve otomatik olarak işlem yapar. Bu durum, tabloların yapısal değişikliklerini veya güncellemelerini zorlaştırabilir.
+* İzlenebilirlik zorlukları: Veritabanı işlemlerini otomatikleştirirken, bazı durumlarda işlemlerin izlenmesini ve takibini zorlaştırabilir.
+* Taşınabilirlik sorunları: Trigger'lar, genellikle belirli bir veritabanı yönetim sistemine özgüdür. Bu nedenle, farklı veritabanı yönetim sistemleri arasında uyumluluk sorunları ortaya çıkabilir.
