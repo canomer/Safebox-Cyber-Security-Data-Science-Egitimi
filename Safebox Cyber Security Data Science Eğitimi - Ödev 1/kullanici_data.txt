@@ -1,0 +1,10 @@
+kullanici1,sifre1
+kullanici2,sifre2
+kullanici3,sifre3
+kullanici4,sifre4
+kullanici5,sifre5
+kullanici6,sifre6
+kullanici7,sifre7
+kullanici8,sifre8
+kullanici9,sifre9
+kullanici10,sifre10
